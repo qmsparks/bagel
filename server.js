@@ -22,6 +22,9 @@ app.use((req, res, next) => {
 })
 
 /* Routes */
+app.use('/', (req, res) => {
+  res.render('index.ejs');
+})
 
 app.listen(PORT, () => {
   console.log(`Listening for client requests at http://localhost:${PORT}`);
