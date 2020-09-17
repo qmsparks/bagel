@@ -19,3 +19,7 @@ mongoose.connection.on('disconnected', () => {
 mongoose.connection.on('', (err) => {
   console.log(`Mongoose error: ${err}`);
 })
+
+module.exports = {
+  bagel: require('./Bagel')
+}
