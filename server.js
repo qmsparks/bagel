@@ -1,5 +1,7 @@
 /* External modules */
 const express = require('express');
+const path = require('path');
+const methodOverride = require('method-override');
 
 /* Internal modules */
 
@@ -10,9 +12,15 @@ const app = express();
 const PORT = 3000;
 
 /* Middleware */
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('method-override'));
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.originalUrl}`);
+  next();
+})
 
 /* Routes */
-
 
 app.listen(PORT, () => {
   console.log(`Listening for client requests at http://localhost:${PORT}`);
