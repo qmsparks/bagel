@@ -4,6 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 
 /* Internal modules */
+const db = require('./models');
 
 /* Instanced modules */
 const app = express();
